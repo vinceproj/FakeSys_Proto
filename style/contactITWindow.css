@@ -1,0 +1,44 @@
+#mainBody{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+    min-width: 300px;
+    min-height: 300px;
+    
+}
+
+#mainBodyContent{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+
+#mainBodyInner{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.popWindowHeader{
+    font-size: 36px;
+    font-weight:bold;
+    margin-bottom: 10px;
+}
+
+.popWindowSubHeader{
+    font-size:24px;
+    display:flex;
+    justify-content: center;
+    
+}
+
+.popWindowText{
+    margin-bottom: 10px;
+    display:flex;
+    justify-content: center;
+    
+}

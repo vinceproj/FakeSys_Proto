@@ -1,0 +1,17 @@
+{
+  "name": "fakesysproto",
+  "version": "1.0.0",
+  "description": "Prototype v1",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.12"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

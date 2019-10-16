@@ -1,0 +1,41 @@
+#mainBody{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+#mainBodyContent{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    
+
+}
+
+.mainPageButton{
+    width: 200px;
+    height:150px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    color: #FFFFFF;
+    border: none;
+}
+
+#fileSharingButton{
+background-color: #a84848;
+}
+
+#messagingButton{
+background-color: #48a860;
+}
+
+#notesButton{
+background-color: #4872a8;
+}
