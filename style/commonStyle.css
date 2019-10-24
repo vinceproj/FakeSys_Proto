@@ -1,20 +1,32 @@
-body{
-    background-color:#1f1f1f;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
-    overflow: hidden;
+body {
+  background-color: #1f1f1f;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+
+  padding: 0;
+  margin: 0;
 }
 
-.navBar{
-    display: flex;
-    background-color:black;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.navBar {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
 }
 
-.navBarItem{
-    display: flex;
-    width: 100%;
-    height: 30px;
+.navBarItem {
+  width: 100%;
+  height: 30px;
+
+  align-self: center;
+  text-align: center;
+  padding-top: 10px;
+  -webkit-user-select: none;
+}
+
+.navBarItem:hover {
+  background-color: #292929;
 }
