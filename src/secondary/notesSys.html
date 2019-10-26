@@ -15,7 +15,22 @@
 
     <div id="mainBody">
       <div id="mainBodyContent">
-        Local Notes
+        <div id="showCurrentDate">Test</div><br>
+        <form id="addToSchedule"></form>
+          <label for ="text">Enter your task here!</label><br>
+          <input type = "text" name = "taskString" value = "" id = "taskString" placeholder = "I have to..." required>
+          <button id="addTaskButton">Add task!</button><br>
+
+          <div id="taskList">
+            <table id="taskTable">
+              <tr>
+                <th class="taskDateAdded">Date added</th>
+                <th></th>
+                <th class="taskText">Task</th>
+              </tr>
+            </table>
+          </div>
+        </form>
       </div>
     </div>
     <script src="../../script/secondary/notesSys.js"></script>

@@ -15,7 +15,6 @@ body {
   align-items: center;
   align-content: center;
   width: 100%;
-  margin-bottom: 10px;
 }
 
 .navBarItem {
@@ -30,4 +29,8 @@ body {
 
 .navBarItem:hover {
   background-color: #292929;
+}
+
+#mainBody{
+  padding: 10px 10px 10px 10px;
 }
