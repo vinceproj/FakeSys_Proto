@@ -1,3 +1,11 @@
-#Task{
+#taskString{
+    width: 80%;
+}
+
+.taskDateAdded{
+    width: 20%;
+}
+
+.taskText{
     width: 80%;
 }

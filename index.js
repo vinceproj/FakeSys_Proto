@@ -8,7 +8,7 @@ let mainWindow, contactITWindow;
 app.on('ready', ()=>{
 
     //Create new Window
-    mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences:{nodeIntegration:true}});
+    mainWindow = new BrowserWindow({width: 800, minWidth: 800, height: 660, minHeight:660, webPreferences:{nodeIntegration:true}});
 
     //Load index.html into window
     mainWindow.loadFile('src/index.html');

@@ -6,10 +6,9 @@ const crypto = require('crypto')
 const filename = 'localSchedule'
 
 const algorithm = 'aes-192-cbc';
-const password = 'for key generation here'
-const key = crypto.scryptSync(password, 'salt', 24);
+const password = 'FakeSysKey'
+const key = 'aaaabbbbccccddddeeeeffff';
 const iv = 'aaaabbbbccccdddd'
-const cipher = crypto.createCipheriv(algorithm, key, iv);
 
 
 $('#homePageButton').on('click', ()=>{
@@ -28,24 +27,26 @@ $('#exitButton').on('click', ()=>{
 let currentDate;
 let dateFinder = new Date();
 currentDate = (dateFinder.getMonth()+1) + "/" + dateFinder.getDate() + "/" + dateFinder.getFullYear()
-console.log(currentDate);
 
 $("#showCurrentDate").text("Today is " + currentDate)
 
 //Encryption functionality
 function encrypt(stringTo){
-    cipher.on('readable', ()=>{
-        let chunk;
-        while(null!== (chunk = cipher.read())){
-            stringTo += chunk.toString('hex');
-            stringTo += '\n'
-        }
-    })
+    let cipher = crypto.createCipheriv(algorithm, key, iv);
+    let encrypted;
+    
+    encrypted = cipher.update(stringTo, 'utf8', 'hex');
+    encrypted += cipher.final('hex');
+    return encrypted;
+    }
 
-    cipher.end();
-    console.log(stringTo)
+function decrypt(stringTo){
+    let decipher = crypto.createDecipheriv(algorithm, key, iv);
+    let decrypted;
 
-
+    decrypted = decipher.update(stringTo, 'hex', 'utf8');
+    decrypted += decipher.final('utf8');
+    return decrypted;
 }
 
 //Task functionality
@@ -55,10 +56,9 @@ $("#addTaskButton").on('click', ()=>{
     addEntry(task);
     $('#taskString').val("");
 
+    let encryptedString = encrypt(task);
 
-    encrypt(task);
-
-    fs.appendFile(filename, task +'\n', function(err){
+    fs.appendFile(filename, encryptedString +'\n', function(err){
         if (err) throw err;
     })
 })
@@ -74,9 +74,10 @@ function loadSchedule(){
         let data = fs.readFileSync(filename, 'utf8').split('\n');
 
         data.forEach((readEncrypted, index)=>{
-            //let readText = decrypt(readEncrypted);
-            if(readEncrypted) 
-            addEntry(readEncrypted);
+            if(readEncrypted){
+                readEncrypted = decrypt(readEncrypted);
+                addEntry(readEncrypted);
+            } 
 
         })
     }else {
