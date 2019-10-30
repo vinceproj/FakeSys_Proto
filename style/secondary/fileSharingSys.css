@@ -1,0 +1,33 @@
+#mainBodyContent{
+    display: flex;
+    flex-wrap:auto;
+}
+
+#fileShareTitle{
+    width:100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+#placeHolder{
+    flex:0.5;
+}
+
+
+#encryptionSide{
+    display:flex;
+    flex-flow:column;
+    flex:1;
+}
+
+#decryptionSide{
+    display: flex;
+    flex-flow:column;
+    flex:1;
+}
+
+.fileSubTitle{
+    font-size: 36px;
+    font-weight:300;
+}

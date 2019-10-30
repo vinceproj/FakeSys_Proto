@@ -14,8 +14,22 @@
     </nav>
 
     <div id="mainBody">
+        <div id="fileShareTitle">File Sharing System</div><br>
       <div id="mainBodyContent">
-        File Sharing System
+        <div id="encryptionSide">
+          <div class="fileSubTitle" id="encryptionTitle">Encrypt a File</div>
+          <input type="file" id="encryptInput">
+          <input type="password" id="encryptPassword" placeholder="Enter your encryption password">
+          <button id="encryptButton">Encrypt!</button>
+        </div>
+        <div id="placeHolder"></div>
+        <div id="decryptionSide">
+          <div class="fileSubTitle" id="decryptionTitle">Decrypt a File</div>
+          <input type="file" id="decryptInput">
+          <input type="password" id="decryptPassword" placeholder="Enter your decryption password">
+          <button id="decryptButton">Decrypt!</button>
+        </div>
+      
       </div>
     </div>
     <script src="../../script/secondary/fileSharingSys.js"></script>

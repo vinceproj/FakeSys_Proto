@@ -57,16 +57,14 @@ $("#addTaskButton").on('click', ()=>{
     addEntry(date, task);
     $('#taskString').val("");
 
-    let encryptedString = encrypt(currentDate + '\t' + task);
-    console.log(encryptedString + ' Encrypted');
-    console.log(decrypt(encryptedString) + ' Decrypted');
+    let encryptedString = encrypt(date + '\t' + task);
     fs.appendFile(filename, encryptedString +'\n', function(err){
         if (err) throw err;
     })
 })
 
 function addEntry(date, task){
-    let updateString = '<tr><td>' + currentDate + '</td><td></td><td>' + task + '</td>';
+    let updateString = '<tr><td>' + date + '</td><td></td><td>' + task + '</td>';
     $('#taskTable').append(updateString);
 }
 
@@ -74,7 +72,6 @@ function loadSchedule(){
     //Check if file exists
     if(fs.existsSync(filename)){
         let data = fs.readFileSync(filename, 'utf8').split('\n');
-
         data.forEach((readEncrypted)=>{
             if(readEncrypted){
                 readEncrypted = decrypt(readEncrypted);
@@ -83,6 +80,7 @@ function loadSchedule(){
             } 
 
         })
+
     }else {
         console.log("error");
         fs.writeFile(filename, "", (err)=>{
